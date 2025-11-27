@@ -70,6 +70,11 @@ object ServiceModule {
     @Provides
     @Singleton
     fun provideRemoteConfig(): com.google.firebase.remoteconfig.FirebaseRemoteConfig {
-        return com.google.firebase.remoteconfig.FirebaseRemoteConfig.getInstance()
+        val remoteConfig = com.google.firebase.remoteconfig.FirebaseRemoteConfig.getInstance()
+        val configSettings = com.google.firebase.remoteconfig.FirebaseRemoteConfigSettings.Builder()
+            .setMinimumFetchIntervalInSeconds(if (BuildConfig.DEBUG) 0 else 3600)
+            .build()
+        remoteConfig.setConfigSettingsAsync(configSettings)
+        return remoteConfig
     }
 }

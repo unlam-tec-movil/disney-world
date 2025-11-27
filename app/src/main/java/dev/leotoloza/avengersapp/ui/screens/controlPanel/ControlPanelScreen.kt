@@ -27,7 +27,9 @@ import dev.leotoloza.avengersapp.ui.viewmodels.PanelControlViewModel
 
 @Composable
 fun PanelControlScreen(
-    viewModel: PanelControlViewModel, onNavigateToFavorites: () -> Unit
+    viewModel: PanelControlViewModel,
+    onNavigateToFavorites: () -> Unit,
+    onLogout: () -> Unit
 ) {
     val context = androidx.compose.ui.platform.LocalContext.current
     val isButtonEnabled by viewModel.isRemoteConfigButtonEnabled.collectAsState()
@@ -77,7 +79,10 @@ fun PanelControlScreen(
 
         ControlPanelButton(
             text = "Cerrar sesión", backgroundColor = Color(0xFFFFCDD2), // Light Red
-            textColor = Color.Black, onClick = { /* TODO */ })
+            textColor = Color.Black, onClick = {
+                viewModel.onLogout()
+                onLogout()
+            })
     }
 }
 

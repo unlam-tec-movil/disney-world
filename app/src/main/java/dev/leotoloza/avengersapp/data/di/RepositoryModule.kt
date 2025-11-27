@@ -24,4 +24,10 @@ abstract class RepositoryModule {
      abstract fun bindFavoritesRepository(
          favoritesRepositoryImpl: FavoritesRepositoryImpl
      ): FavoritesRepository
+
+    @Binds
+    @Singleton
+    abstract fun bindRemoteConfigRepository(
+        remoteConfigRepositoryImpl: dev.leotoloza.avengersapp.data.repository.RemoteConfigRepositoryImpl
+    ): dev.leotoloza.avengersapp.data.repository.RemoteConfigRepository
 }

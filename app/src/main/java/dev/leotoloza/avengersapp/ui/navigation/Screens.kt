@@ -21,4 +21,7 @@ sealed class Screens(val route: String){
 
     @Serializable
     object Splash: Screens(route = "splash_screen")
+
+    @Serializable
+    object Authentication: Screens(route = "authentication_screen")
 }

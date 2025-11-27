@@ -57,7 +57,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.appcompat)
-    //implementation(libs.firebase.config.ktx)
+    implementation(libs.androidx.compose.runtime.saveable)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -87,10 +87,10 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-crashlytics-ndk")
     implementation("com.google.firebase:firebase-firestore")
-    implementation("com.firebaseui:firebase-ui-auth:9.0.0")
     implementation("com.google.firebase:firebase-config")
     implementation("com.google.firebase:firebase-perf")
     implementation("com.google.firebase:firebase-messaging")
-
-
+    implementation("com.google.firebase:firebase-inappmessaging-display")
+    implementation("com.firebaseui:firebase-ui-auth:9.0.0")
+    implementation("com.google.android.gms:play-services-auth:21.3.0")
 }

@@ -8,4 +8,5 @@
     <string name="error_request_time_out">La petición ha tardado demasiado. Verifica tu conexión.</string>
     <string name="error_internal_server_error">Error interno del servidor. Por favor reintente más tarde.</string>
     <string name="error_service_unavailable">Servicio no disponible temporalmente. Por favor reintente más tarde.</string>
+    <string name="default_web_client_id">414094479779-bcracg6k61bc3nstk5k3sogvp84nqvke.apps.googleusercontent.com</string>
 </resources>

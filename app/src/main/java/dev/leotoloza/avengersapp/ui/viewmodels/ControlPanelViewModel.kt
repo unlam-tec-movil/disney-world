@@ -84,6 +84,10 @@ class PanelControlViewModel @Inject constructor(
         _uiState.value = _uiState.value.copy(error = null)
     }
 
+    fun onLogout() {
+        com.google.firebase.auth.FirebaseAuth.getInstance().signOut()
+    }
+
     companion object {
         private const val TAG = "PanelControlViewModel"
         private const val FEATURE_BUTTON_ENABLED_KEY = "feature_button_enabled"

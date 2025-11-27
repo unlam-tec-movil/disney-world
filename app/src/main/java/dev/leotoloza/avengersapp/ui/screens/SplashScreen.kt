@@ -18,14 +18,22 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.google.firebase.auth.FirebaseAuth
 import dev.leotoloza.avengersapp.R
 import kotlinx.coroutines.delay
 
 @Composable
-fun SplashScreen(onNavigateToNextScreen: () -> Unit) {
+fun SplashScreen(
+    onNavigateToNextScreen: () -> Unit,
+    onNavigateToAuth: () -> Unit
+) {
     LaunchedEffect(Unit) {
         delay(1500)
-        onNavigateToNextScreen()
+        if (FirebaseAuth.getInstance().currentUser != null) {
+            onNavigateToNextScreen()
+        } else {
+            onNavigateToAuth()
+        }
     }
     Surface(modifier = Modifier.fillMaxSize()) {
         Column(
